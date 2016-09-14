@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Url</th>
+      <th>Target</th>
       <th>Description</th>
       <th>Tags</th>
       <th colspan="3"></th>
@@ -17,7 +17,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.title %></td>
-        <td><%= link.url %></td>
+        <td><%= link.target %></td>
         <td><%= link.description %></td>
         <td><%= link.tags %></td>
         <td><%= link_to 'Show', link %></td>
