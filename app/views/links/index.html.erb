@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Target category</th>
       <th>Target info</th>
       <th>Description</th>
       <th>Tags</th>
@@ -17,6 +18,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.title %></td>
+        <td><%= link.target_category %></td>
         <td><%= link.target_info %></td>
         <td><%= link.description %></td>
         <td><%= link.tags %></td>

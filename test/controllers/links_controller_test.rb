@@ -18,7 +18,7 @@ class LinksControllerTest < ActionController::TestCase
 
   test "should create link" do
     assert_difference('Link.count') do
-      post :create, link: { description: @link.description, tags: @link.tags, target_info: @link.target_info, title: @link.title }
+      post :create, link: { description: @link.description, tags: @link.tags, target_category: @link.target_category, target_info: @link.target_info, title: @link.title }
     end
 
     assert_redirected_to link_path(assigns(:link))
@@ -35,7 +35,7 @@ class LinksControllerTest < ActionController::TestCase
   end
 
   test "should update link" do
-    patch :update, id: @link, link: { description: @link.description, tags: @link.tags, target_info: @link.target_info, title: @link.title }
+    patch :update, id: @link, link: { description: @link.description, tags: @link.tags, target_category: @link.target_category, target_info: @link.target_info, title: @link.title }
     assert_redirected_to link_path(assigns(:link))
   end
 
