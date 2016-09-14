@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
   resources :links
+  resources :links
+  resources :users
   root 'pages#home'
 
   get 'pages/about'
