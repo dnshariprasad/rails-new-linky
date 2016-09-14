@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914143334) do
+ActiveRecord::Schema.define(version: 20160914164911) do
 
   create_table "links", force: :cascade do |t|
     t.string   "title"
@@ -31,5 +31,8 @@ ActiveRecord::Schema.define(version: 20160914143334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["mobile"], name: "index_users_on_mobile", unique: true
 
 end
