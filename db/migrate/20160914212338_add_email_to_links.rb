@@ -1,6 +1,5 @@
 class AddEmailToLinks < ActiveRecord::Migration
   def change
-    add_column :links, :email, :integer
-    add_index :links, :email
+    add_column :links, :email, :string
   end
 end
