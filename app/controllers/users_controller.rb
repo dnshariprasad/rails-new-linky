@@ -70,13 +70,26 @@ class UsersController < ApplicationController
     @user=User.where(:email => params[:email]).first
     respond_to do |format|
       if @user.present? && @user.password == params[:password]
+        format.html { redirect_to @user, notice: 'Signin sccessfull.' } 
         format.json { render json: {status: 200 ,user: @user}}
-      else 
+      else
+        format.html { render :show, notice: 'Login failed.' } 
         format.json { render json: {status: 404 ,error: "No user found with this email."}}
       end
     end
   end
-
+  
+  def forgot
+    @user=User.where(:email => params[:email]).first
+    respond_to do |format|
+      if @user.present?
+        format.json { render json: {status: 200 ,password: @user.password}}
+      else
+        format.json { render json: {status: 404 ,error: "No user found with this email."}}
+      end
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
