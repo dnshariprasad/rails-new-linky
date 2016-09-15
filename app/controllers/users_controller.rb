@@ -28,10 +28,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if User.find_by_email(@user.email)
         format.html { redirect_to @user, notice: 'Email already in use.' }
-        format.json { render json: {error: "Email already in use.", status: 400}}
+        format.json { render json: {status: 400, error: "Email already in use."}}
       elsif User.find_by_mobile(@user.mobile)
         format.html { redirect_to @user, notice: 'Moblie already in use.' }
-        format.json { render json: {error: "Moblie already in use.", status: 400}}
+        format.json { render json: {status: 400, error: "Moblie already in use."}}
       elsif @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
