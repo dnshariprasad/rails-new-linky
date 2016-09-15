@@ -25,9 +25,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
-      if @user.save
+      if User.find_by_email(@user.email)
+        format.html { redirect_to @user, notice: 'Email already in use.' }
+        format.json { render json: {error: "Email already in use."}, status: :unprocessable_entity}
+      elsif User.find_by_mobile(@user.mobile)
+        format.html { redirect_to @user, notice: 'Moblie already in use.' }
+        format.json { render json: {error: "Moblie already in use."}, status: :unprocessable_entity}
+      elsif @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
