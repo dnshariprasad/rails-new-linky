@@ -69,10 +69,10 @@ class UsersController < ApplicationController
   def signin
     @user=User.where(:email => params[:email]).first
     respond_to do |format|
-      if @user.present?
-      format.json { render json: {status: 200 ,user: @user,error: "No user found with this email."}}
+      if @user.present? && @user.password == params[:password]
+        format.json { render json: {status: 200 ,user: @user,error: "No user found with this email."}}
       else 
-      format.json { render json: {status: 404 ,error: "No user found with this email."}}
+        format.json { render json: {status: 404 ,error: "No user found with this email."}}
       end
     end
   end
