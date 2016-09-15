@@ -66,6 +66,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def signin
+    @user=User.where(:email => params[:email]).first
+    respond_to do |format|
+      if @user.present?
+      format.json { render json: {status: 200 ,user: @user,error: "No user found with this email."}}
+      else 
+      format.json { render json: {status: 404 ,error: "No user found with this email."}}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
