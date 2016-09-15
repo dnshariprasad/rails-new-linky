@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'pages/about'
   get "signin" => 'users#signin'
+  post "signin_user" => 'users#signin_user'
   get "forgot" => 'users#forgot'
 
   # The priority is based upon order of creation: first created -> highest priority.

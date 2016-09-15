@@ -67,13 +67,16 @@ class UsersController < ApplicationController
   end
 
   def signin
+  end
+
+  def signin_user
     @user=User.where(:email => params[:email]).first
     respond_to do |format|
       if @user.present? && @user.password == params[:password]
-        format.html { redirect_to @user, notice: 'Signin sccessfull.' } 
+        format.html { redirect_to users_url, notice: 'Signin sccessfull.' } 
         format.json { render json: {status: 200 ,user: @user}}
       else
-        format.html { render :show, notice: 'Login failed.' } 
+        format.html { redirect_to users_url, notice: 'Login failed.' } 
         format.json { render json: {status: 404 ,error: "No user found with this email."}}
       end
     end
