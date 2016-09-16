@@ -8,8 +8,8 @@ Body :
 ```
 
 {
-"email":"hari",
-"password":"123"
+  "email": "1",
+  "password": "1",
 }
 
 ```
