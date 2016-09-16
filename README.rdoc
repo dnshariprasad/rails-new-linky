@@ -3,16 +3,16 @@ Base Url : https://new-linky.herokuapp.com/
 
 Register :
 POST /signin
+```
 
 Body :
-```
 
 {
 "email":"hari",
 "password":"123"
 }
 
-```
+
 Response :
 Success:
 ```
@@ -31,10 +31,10 @@ Success:
   }
 }
 
-```
+
 
 Failure :
-```
+
 
 {
   "status": 404,
