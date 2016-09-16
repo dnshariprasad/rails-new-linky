@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/about'
 
-  get 'signin/new/' => 'users#signin'
+  get 'signin/new' => 'users#signin'
   post 'signin' => 'users#signin_user'
 
   get 'forgot/change' => 'users#forgot'
