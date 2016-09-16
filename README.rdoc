@@ -5,12 +5,12 @@ Register :
 POST /signin
 
 Body :
-
+```json
 {
 "email":"hari",
 "password":"123"
 }
-
+```
 Response :
 Success:
 
