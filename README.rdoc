@@ -5,15 +5,15 @@ Register :
 POST /signin
 
 Body :
-``
+```
 {
 "email":"hari",
 "password":"123"
 }
+```
 Response :
 Success:
-''
-
+```
 {
   "status": 200,
   "user": {
@@ -28,12 +28,11 @@ Success:
   }
 }
 
-``
+```
 
 Failure :
-``
+```
 {"status": 404,
   "error": "No user found with this email."
 }
-
-``
+```
