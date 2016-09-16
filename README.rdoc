@@ -20,6 +20,7 @@ Response :
 ```
 
 Success:
+ 
  {
   "status": 200,
   "user": {
