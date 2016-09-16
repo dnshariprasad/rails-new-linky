@@ -38,7 +38,8 @@ Success:
 
 ```
 
-Failure :
+Failure 
+
 {
   "status": 404,
   "error": "No user found with this email."
