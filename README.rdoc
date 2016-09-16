@@ -4,16 +4,16 @@ Base Url : https://new-linky.herokuapp.com/
 Register :
 POST /signin
 
-Body :
 ```
+Body :
 {
   "email": "1",
   "password": "1"
 }
 ```
 Response :
-Success:
 ```
+Success:
  {
   "status": 200,
   "user": {
@@ -28,8 +28,8 @@ Success:
   }
 }
 ```
-Failure :
 ```
+Failure :
 {
   "status": 404,
   "error": "No user found with this email."
