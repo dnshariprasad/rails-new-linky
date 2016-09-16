@@ -83,11 +83,16 @@ class UsersController < ApplicationController
   end
   
   def forgot
+  end
+
+  def get_password
     @user=User.where(:email => params[:email]).first
     respond_to do |format|
       if @user.present?
+        format.html { redirect_to users_url, notice: "Your password is : #{@user.password}" } 
         format.json { render json: {status: 200 ,password: @user.password}}
       else
+        format.html { redirect_to users_url, notice: 'User not found.' } 
         format.json { render json: {status: 404 ,error: "No user found with this email."}}
       end
     end

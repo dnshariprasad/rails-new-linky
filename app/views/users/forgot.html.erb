@@ -1,1 +1,5 @@
 <h1>Forgot<h1>
+<%= form_tag '/forgot' do %>
+Email: <%= text_field_tag :email %>
+<%= submit_tag "Submit" %>
+<% end %>
