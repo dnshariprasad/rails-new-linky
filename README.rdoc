@@ -5,16 +5,16 @@ Register :
 POST /signin
 
 Body :
-```json
+``
 {
 "email":"hari",
 "password":"123"
 }
-```
+``
 Response :
 Success:
-```json
-{
+``
+ {
   "status": 200,
   "user": {
     "id": 5,
@@ -27,12 +27,12 @@ Success:
     "updated_at": "2016-09-15T07:20:28.030Z"
   }
 }
-
-```
+``
 
 Failure :
-```json
-{"status": 404,
+``
+{
+  "status": 404,
   "error": "No user found with this email."
 }
-```
+``
