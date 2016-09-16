@@ -1,6 +1,6 @@
-== README
+#README
 
-(Rails Code) [https://github.com/dnshariprasad/rails-new-linky]
+[Rails Code] (https://github.com/dnshariprasad/rails-new-linky)
 
 [Web App] (https://new-linky.herokuapp.com)
 
